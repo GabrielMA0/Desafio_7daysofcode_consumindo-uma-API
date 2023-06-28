@@ -1,0 +1,145 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+
+:root {
+    --box-shadow-movies: 5px 5px 14px rgba(0, 0, 0, 0.2),
+        -5px -5px 14px rgba(0, 0, 0, 0.2);
+    --box-shadow-img: 4px 0px 30px rgba(0, 0, 0, 0.5);
+    --color-text: white;
+    --background-color: linear-gradient(
+        -225deg,
+        #3d4e81 0%,
+        #5753c9 48%,
+        #6e7ff3 100%
+    );
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    background-image: var(--background-color);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.title {
+    font-family: "Caveat", cursive;
+    font-size: 3em;
+    color: var(--color-text);
+}
+#field-search {
+    padding: 1.5em;
+    border-radius: 10px;
+    width: 500px;
+    outline: none;
+    border: 1px gray solid;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+input[type="checkbox" i] {
+    display: none;
+}
+input[type="checkbox" i] + label:before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid gray;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+.checkbox-label {
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+input[type="checkbox" i]:checked + label:before {
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: red;
+    background-position: center;
+    border: none;
+    padding: 1px;
+}
+.movie {
+    display: flex;
+    background-color: #3c3a8a;
+    border-radius: 20px;
+    margin-top: 2em;
+    margin-bottom: 10px;
+    padding: 1em;
+    width: 50em;
+    height: 201px;
+    box-shadow: var(--box-shadow-movies);
+}
+.img-movie {
+    border-radius: 50%;
+    width: 139px;
+    height: 139px;
+    box-shadow: var(--box-shadow-img);
+}
+.movie-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.movie-btns-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+}
+.movie-title {
+    color: var(--color-text);
+}
+.movie-btns {
+    display: flex;
+    gap: 20px;
+}
+.movie-btns button {
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+.ratingContainer {
+    display: flex;
+    align-items: center;
+}
+.text-rating {
+    color: white;
+}
+.btn-rating {
+    padding-bottom: 5px;
+    color: white;
+}
+.btn-favorite {
+    color: red;
+}
+.description {
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+.movie-description {
+    width: 592;
+    height: 128;
+    font-size: 18px;
+    color: white;
+}
