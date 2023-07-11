@@ -37,6 +37,9 @@ main {
     font-size: 3em;
     color: var(--color-text);
 }
+.input-container {
+    position: relative;
+}
 #field-search {
     padding: 1.5em;
     border-radius: 10px;
@@ -45,6 +48,16 @@ main {
     border: 1px gray solid;
     font-size: 15px;
     margin-bottom: 25px;
+}
+#search-btn {
+    position: absolute;
+    right: 10px; /* Posição do ícone */
+    bottom: 50%;
+    font-size: 20px;
+    color: gray;
+    cursor: pointer;
+    border: none;
+    background: none;
 }
 input[type="checkbox" i] {
     display: none;
@@ -79,23 +92,22 @@ input[type="checkbox" i]:checked + label:before {
     background-color: #3c3a8a;
     border-radius: 20px;
     margin-top: 2em;
-    margin-bottom: 10px;
     padding: 1em;
     width: 50em;
     height: 201px;
     box-shadow: var(--box-shadow-movies);
-}
-.img-movie {
-    border-radius: 50%;
-    width: 139px;
-    height: 139px;
-    box-shadow: var(--box-shadow-img);
 }
 .movie-info {
     display: flex;
     align-items: center;
     width: 100%;
     justify-content: space-between;
+}
+.img-movie {
+    border-radius: 50%;
+    width: 139px;
+    height: 139px;
+    box-shadow: var(--box-shadow-img);
 }
 .movie-btns-title {
     display: flex;
@@ -113,7 +125,6 @@ input[type="checkbox" i]:checked + label:before {
 }
 .movie-btns button {
     background: transparent;
-    cursor: pointer;
     border: none;
     display: flex;
     align-items: center;
@@ -130,16 +141,22 @@ input[type="checkbox" i]:checked + label:before {
     color: white;
 }
 .btn-favorite {
-    color: red;
+    cursor: default;
+}
+.btn-favorite img {
+    transition: 0.3s;
+    cursor: pointer;
+}
+.btn-favorite img:hover {
+    scale: 1.2;
 }
 .description {
     display: flex;
     align-items: center;
     width: 400px;
+    height: 100%;
+    overflow: auto;
 }
 .movie-description {
-    width: 592;
-    height: 128;
-    font-size: 18px;
     color: white;
 }
