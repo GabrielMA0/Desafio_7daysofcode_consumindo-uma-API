@@ -160,3 +160,38 @@ input[type="checkbox" i]:checked + label:before {
 .movie-description {
     color: white;
 }
+
+@media (max-width: 426px) {
+    .input-container {
+        width: 100%;
+    }
+    #field-search {
+        width: 100%;
+        margin: 0;
+    }
+    #search-btn {
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        bottom: 0;
+    }
+    .div-checkbox {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 2em;
+    }
+    .movie {
+        width: 100%;
+        height: 100%;
+    }
+    .movie-info {
+        flex-direction: column;
+    }
+    .movie-btns-title {
+        padding-bottom: 25px;
+    }
+    .description {
+        width: 100%;
+    }
+}
