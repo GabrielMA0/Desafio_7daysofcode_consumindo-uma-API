@@ -94,7 +94,7 @@ input[type="checkbox" i]:checked + label:before {
     margin-top: 2em;
     padding: 1em;
     width: 50em;
-    height: 201px;
+    height: 250px;
     box-shadow: var(--box-shadow-movies);
 }
 .movie-info {

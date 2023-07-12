@@ -21,7 +21,7 @@ async function getPopularMovies() {
 
     popularMovies = data.results;
 
-    popularMovies.forEach((movies) => renderMovie(movies));
+    popularMovies.forEach((movie) => renderMovie(movie));
 }
 
 searchButton.addEventListener("click", async function () {
@@ -45,7 +45,7 @@ searchButton.addEventListener("click", async function () {
 function checkFavoriteMovie(id) {
     let favoriteMoviesJSON =
         JSON.parse(localStorage.getItem("favoriteMovies")) || [];
-    return favoriteMoviesJSON.some((m) => m.id === id);
+    return favoriteMoviesJSON.some((m) => String(m.id) === String(id));
 }
 
 function renderMovie(movie) {
@@ -126,13 +126,14 @@ function renderMovie(movie) {
     });
 }
 
-function saveFavoriteMovie(movie, isFavorited) {
+function saveFavoriteMovie(movie) {
+    let isFavorited = checkFavoriteMovie(movie.id);
     isFavorited = !isFavorited;
     let movieDiv = document.querySelector(`[data-id="${movie.id}"]`);
 
     const favoriteImage = movieDiv.querySelector(".favorite-image"); // primeiro filho
 
-    if (isFavorited) {
+    if (isFavorited === true) {
         let getFavoriteMoviesJSON =
             JSON.parse(localStorage.getItem("favoriteMovies")) || [];
         getFavoriteMoviesJSON.push(movie);
